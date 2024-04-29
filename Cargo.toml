@@ -1,0 +1,35 @@
+[package]
+name = "code_scan"
+version = "0.1.0"
+edition = "2021"
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0.102"
+walkdir = "2.3.3"
+# 正则匹配
+regex = "1.9.1"
+# xml解析器
+serde-xml-rs = "0.6"
+xmltree = "0.10"
+schemars = "0.8.8"
+serde_yaml = "0.9.25"
+# 初始化工具
+lazy_static = "1.4.0"
+# http request
+http_req = "0.9.2"
+# 并行库
+rayon = "1.5"
+# 进度条
+indicatif = "0.17.5"
+
+# 编译配置
+[profile.release]
+# 极限优化二进制文件体积(会牺牲部分性能)，若不需要更小的可执行文件可注释
+# opt-level = 'z'
+# 动态连接，大小换速度
+# lto = true
+# 数字越小体积越小速度越慢
+# codegen-units = 1
+panic = 'abort'
+# 除去无用空字符
+strip = true

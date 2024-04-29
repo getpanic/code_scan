@@ -1,0 +1,151 @@
+[
+    {
+        "keyword": "ProcessBuilder",
+        "note": "构建进程的代码，可能存在命令注入等风险",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "getRuntime.exec\\(\\D{0,}\\)",
+        "note": "构建进程的代码，可能存在命令注入等风险",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "Class.forName\\(\\D{0,}\\)",
+        "note": "类加载方法，可能存在反射类型的漏洞",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "ScriptEngine",
+        "note": "脚本引擎管理器，可能存在代码执行风险",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "SpelExpressionParser()",
+        "note": "Spel表达式解析可能存在注入漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "DocumentBuilder()",
+        "note": "常用XML解析器,可能存在XXE漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "DocumentHelper()",
+        "note": "常用XML解析器,可能存在XXE漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "SAXReader",
+        "note": "常用XML解析器,可能存在XXE漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "DocumentBuilder()",
+        "note": "常用XML解析器,可能存在XXE漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "EntityResolver",
+        "note": "常用XML解析器,可能存在XXE漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "SAXParser",
+        "note": "常用XML解析器,可能存在XXE漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "XMLInputFactory",
+        "note": "常用XML解析器,可能存在XXE漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "SchemaFactory",
+        "note": "常用XML解析器,可能存在XXE漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "URLConnection()",
+        "note": "JDK自带的URL连接工具，可能存在SSRF漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "HttpClient()",
+        "note": "JAVA常用的网络请求工具，可能存在SSRF漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "RestTemplate()",
+        "note": "JAVA常用的网络请求工具，可能存在SSRF漏洞",
+        "condition": "Contain"
+    },{
+        "keyword": "Velocity.evalute\\(\\D{0,}\\)",
+        "note": "JAVA服务器模板渲染组件Velocity，可能存在SSTI漏洞",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "StringTemplateLoader()",
+        "note": "JAVA服务器模板渲染组件FreeMarker，可能存在SSTI漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "@(Select|Update|Insert|Delete)\\s*\\(\"([^\"]*?\\$\\{[^}]*})\"\\)",
+        "note": "Mybatis SQL语句注解 可能存在SQL注入风险",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "FileOutputStream\\(\\D{0,}\\)",
+        "note": "文件输出流，可能存在文件内容写入漏洞",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "FileInputStream\\(\\D{0,}\\)",
+        "note": "文件输入流，可能存在文件内容读取漏洞",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "loadClass\\(\\D{0,}\\)",
+        "note": "动态加载Class，存在恶意代码加载风险",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "loadClass\\(\\D{0,}\\)",
+        "note": "动态加载Class，存在恶意代码加载风险",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "transferTo\\(\\D{0,}\\)",
+        "note": "MultipartFile 文件上传落地的方法",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "MultipartFile",
+        "note": "文件上传常见类型",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "InitialContext",
+        "note": "JNDI上下文对象，存在JNDI注入风险",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "createNativeQuery(",
+        "note": "创建原生的SQL语句，可能存在SQL注入",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "\\@\\b(Query|NamedQuery)\\b\\s*\\(\\s*name\\s*=\\s*\"\\w+\"\\s*,\\s*query\\s*=\\s*\".*?\"\\s*\\)",
+        "note": "Spring Data JPA查询注解，可能存在SQL注入",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "executeQuery\\(\\D{0,}\\)",
+        "note": "创建原生的SQL语句，可能存在SQL注入",
+        "condition": "Regex"
+    },
+    {
+        "keyword": "FileUtils.copyFile(",
+        "note": "commons-io文件复制方法，可能存在文件写入漏洞",
+        "condition": "Contain"
+    }
+]

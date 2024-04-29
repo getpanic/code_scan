@@ -1,0 +1,47 @@
+{
+    # 要扫描的项目名，主要用于生成报告
+    "project_name": "your_project_name",
+    # 要扫描的语言类型，程序会根据该参数进行区别化扫描和加载不同的扫描规则，该配置会加载./rules/java.json
+    "lang_type": "JAVA",
+    # 项目代码的根目录
+    "work_dir": "/tmp/sourcecode",
+    # 要扫描的文件后缀
+    "scan_ext": ["java", "jsp"],
+    # 排除文件包含哪些目录
+    "exclude_path": ["/.idea", "/.git", "/.mvn", "/target"],
+    # 是否尝试收集接口
+    "collection_interface": true,
+    # 代码框架，目前仅支持Spring/Struts/Struts2/Laravel/Thinkphp/YII，没有使用框架需要填入None
+    "framework": "Spring",
+    # ORM框架漏洞检测支持，目前支持mybatis，可为空
+    "orm": "Mybatis",
+    # 依赖文件路径
+    "depency_file": "/Users/neo/Desktop/remotecontrol/pom.xml",
+    # 报告的生成路径
+    "report_file_path": "report.md",
+    # 是否使用UI来进行调用
+    "use_ui": false,
+    # 当collection_interface设置为true时，可以通过此参数进行未授权接口扫描
+    "unauthorized": {
+        # 是否要进行未授权验证
+        "valid": true,
+        # 项目运行环境，需要带上前缀
+        "prefix": "http://你的验证域名",
+        # 规则参数
+        "rule": {
+            # 当响应的状态码为其中某一个则会认为是未授权接口
+            "status_code": [200, 403, 405, 500],
+            # 当响应体字符串根据参数包含或正则表达式命中则会认为是未授权接口
+            "response_body": [
+                {
+                    "match_rule": "CONTAIN",
+                    "value": "success"
+                },
+                {
+                    "match_rule": "CONTAIN",
+                    "value": "200"
+                }
+            ]
+        }
+    }
+}

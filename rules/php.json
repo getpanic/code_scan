@@ -1,0 +1,137 @@
+[
+    {
+        "keyword": "exec(",
+        "note": "执行系统命令，可能导致命令注入漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "shell_exec(",
+        "note": "执行系统命令或外部脚本，可能导致命令注入漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "system(",
+        "note": "执行系统命令，可能导致命令注入漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "eval(",
+        "note": "执行动态生成的代码，可能导致代码注入和执行漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "include(",
+        "note": "读取或包含文件，可能导致文件包含漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "unserialize(",
+        "note": "反序列化数据，可能导致反序列化漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "preg_replaceContain(",
+        "note": "正则表达式操作，可能导致正则表达式注入漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "extract(",
+        "note": "解析数组为变量，可能导致变量覆盖和代码执行漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "mysqli_query(",
+        "note": "使用 mysqli 执行数据库查询，可能导致 SQL 注入漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "pdo_query(",
+        "note": "使用 PDO 执行数据库查询，可能导致 SQL 注入漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "system(",
+        "note": "执行系统命令，可能导致命令注入漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "file_get_contents(",
+        "note": "读取文件内容，可能导致文件包含或ssrf漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "file_put_contents(",
+        "note": "写入文件内容，可能导致文件操作漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "simplexml_load_file(",
+        "note": "可能存在 XXE 漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "DOMDocument::load",
+        "note": "可能存在 XXE 漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "DOMDocument::loadXML",
+        "note": "可能存在 XXE 漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "simplexml_load_string",
+        "note": "可能存在 XXE 漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "fsockopen",
+        "note": "可能存在 SSRF 漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "curl_init",
+        "note": "可能存在 SSRF 漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "create_function(",
+        "note": "可能存在代码执行漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "include_once(",
+        "note": "引入文件，可能存在文件包含漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "require(",
+        "note": "引入文件，可能存在文件包含漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "require_once(",
+        "note": "引入文件，可能存在文件包含漏洞",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "array_map(",
+        "note": "回调函数，存在RCE风险",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "array_filter(",
+        "note": "回调函数，存在RCE风险",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "array_walk(",
+        "note": "回调函数，存在RCE风险",
+        "condition": "Contain"
+    },
+    {
+        "keyword": "call_user_fun",
+        "note": "回调函数，存在RCE风险",
+        "condition": "Contain"
+    }
+]

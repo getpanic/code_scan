@@ -1,0 +1,30 @@
+{
+    "project_name": "开源商场",
+    "lang_type": "JAVA",
+    "work_dir": "CMS_old",
+    "scan_ext": ["java", "jsp"],
+    "exclude_path": ["/.idea", "/.git", "/.mvn", "/target"],
+    "collection_interface": true,
+    "framework": "Spring",
+    "orm": "None",
+    "depency_file": "CMS_old/pom.xml",
+    "report_file_path": "report.md",
+    "use_ui": false,
+    "unauthorized": {
+        "valid": false,
+        "prefix": "",
+        "rule": {
+            "status_code": [200, 403, 405, 500],
+            "response_body": [
+                {
+                    "match_rule": "CONTAIN",
+                    "value": "success"
+                },
+                {
+                    "match_rule": "CONTAIN",
+                    "value": "200"
+                }
+            ]
+        }
+    }
+}
